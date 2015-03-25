@@ -35,6 +35,7 @@ class HRApp{
 	private double abvZonePercentage = 0.0D;
 	private double blwZonePercentage = 0.0D;
 	private Scanner scan;
+	private HRCalculator hrc = new HRCalculator();
 
 	public static void main(String[] args){
 		//System.out.println("Working");
@@ -45,7 +46,7 @@ class HRApp{
 
 	//Create Menu and get user input and output final values
 	void intializeMenu(){
-		HRCalculator hrc = new HRCalculator();
+		hrc = new HRCalculator();
 		
 		System.out.println("\u0003---\u0003 Heart Rate Zone Calculator \u0003---\u0003");
 	
