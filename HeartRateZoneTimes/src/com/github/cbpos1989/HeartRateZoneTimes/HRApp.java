@@ -51,9 +51,9 @@ class HRApp{
 		System.out.println("\u0003---\u0003 Heart Rate Zone Calculator \u0003---\u0003");
 	
 		inputOverallTime(hrc);
-		inputInZoneTime(hrc);
-		inputAbvZoneTime(hrc);
-		inputBlwZoneTime(hrc);
+		//inputInZoneTime(hrc);
+		//inputAbvZoneTime(hrc);
+		//inputBlwZoneTime(hrc);
 		userOutput(hrc);
 	}
 
@@ -78,8 +78,8 @@ class HRApp{
 
 	//Output final sum of user input values
 	void userOutput(HRCalculator hrc){
-
-		if(hrc.checkPercentage(inZonePercentage, abvZonePercentage, blwZonePercentage)){
+		System.out.println(overallTotal);
+		/*if(hrc.checkPercentage(inZonePercentage, abvZonePercentage, blwZonePercentage)){
 			
 			
 			System.out.println("\n***Percentage Totals***\n" 
@@ -88,12 +88,22 @@ class HRApp{
 						+ BLWZONE_NAME + ": " + Math.round(blwZonePercentage) + "%");
 		} else {
 			System.out.println("---Incorrect Percentage---");
-		}
+		}*/
 	}
 
 	void inputOverallTime(HRCalculator hrc){
-		userInput(OVERALL_NAME);
-		overallTotal = hrc.calculateUserInput(hours, mins, secs);
+		//userInput(OVERALL_NAME);
+		//overallTotal = hrc.calculateUserInput(hours, mins, secs);
+		
+		HRMenu hrm = new HRMenu(OVERALL_NAME);
+		hrm.setVisible(true);
+		
+	
+		
+		while (hrm.isMenuEnabled() == false){
+			overallTotal = hrm.getTotal();
+		}
+		
 	}
 		
 	void inputInZoneTime(HRCalculator hrc){
