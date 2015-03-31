@@ -21,7 +21,7 @@ public class HRMenu extends JFrame  {
 
 	private JPanel contentPane;
 	private int total;
-	private static boolean menuEnabled = true;
+	private static boolean menuEnabled = false;
 
 	/**
 	 * Launch the application.
@@ -98,7 +98,8 @@ public class HRMenu extends JFrame  {
 				int secs = (Integer)secondSpinner.getValue();
 				
 				total = new HRCalculator().calculateUserInput(hours, mins, secs);
-				setVisible(false);
+				//setVisible(false);
+				
 				menuEnabled = false;
 			}
 		});

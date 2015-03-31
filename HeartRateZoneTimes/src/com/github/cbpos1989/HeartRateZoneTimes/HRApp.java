@@ -50,11 +50,11 @@ class HRApp{
 		
 		System.out.println("\u0003---\u0003 Heart Rate Zone Calculator \u0003---\u0003");
 	
-		inputOverallTime(hrc);
-		//inputInZoneTime(hrc);
-		//inputAbvZoneTime(hrc);
-		//inputBlwZoneTime(hrc);
-		userOutput(hrc);
+		inputOverallTime();
+		inputInZoneTime();
+		inputAbvZoneTime();
+		inputBlwZoneTime();
+		userOutput();
 	}
 
 	//Allow user to input values for hours, mins & secs
@@ -77,9 +77,9 @@ class HRApp{
 	}
 
 	//Output final sum of user input values
-	void userOutput(HRCalculator hrc){
-		System.out.println(overallTotal);
-		/*if(hrc.checkPercentage(inZonePercentage, abvZonePercentage, blwZonePercentage)){
+	void userOutput(){
+		
+		if(hrc.checkPercentage(inZonePercentage, abvZonePercentage, blwZonePercentage)){
 			
 			
 			System.out.println("\n***Percentage Totals***\n" 
@@ -88,40 +88,57 @@ class HRApp{
 						+ BLWZONE_NAME + ": " + Math.round(blwZonePercentage) + "%");
 		} else {
 			System.out.println("---Incorrect Percentage---");
-		}*/
+		}
 	}
 
-	void inputOverallTime(HRCalculator hrc){
+	void inputOverallTime(){
 		//userInput(OVERALL_NAME);
 		//overallTotal = hrc.calculateUserInput(hours, mins, secs);
 		
 		HRMenu hrm = new HRMenu(OVERALL_NAME);
-		hrm.setVisible(true);
 		
-	
+		while (hrm.isMenuEnabled() == true) {
+			hrm.setVisible(true);
+		} 
+		hrm.setVisible(false);
 		
-		while (hrm.isMenuEnabled() == false){
-			overallTotal = hrm.getTotal();
-		}
-		
+		overallTotal = hrm.getTotal();
 	}
 		
-	void inputInZoneTime(HRCalculator hrc){
-		userInput(INZONE_NAME);
-		inZoneTotal = hrc.calculateUserInput(hours, mins, secs);
+	void inputInZoneTime(){
+		HRMenu hrm = new HRMenu(INZONE_NAME);
+		
+		while (hrm.isMenuEnabled() == true) {
+			hrm.setVisible(true);
+		} 
+		hrm.setVisible(false);
+		
+		inZoneTotal = hrm.getTotal();
 		inZonePercentage = hrc.calculatePercentage(inZoneTotal, overallTotal);
 	}
 
-	void inputAbvZoneTime(HRCalculator hrc){
-		userInput(ABVZONE_NAME);
-		abvZoneTotal = hrc.calculateUserInput(hours, mins, secs);
+	void inputAbvZoneTime(){
+		HRMenu hrm = new HRMenu(ABVZONE_NAME);
+		
+		while (hrm.isMenuEnabled() == true) {
+			hrm.setVisible(true);
+		} 
+		hrm.setVisible(false);
+		
+		abvZoneTotal = hrm.getTotal();
 		abvZonePercentage = hrc.calculatePercentage(abvZoneTotal, overallTotal);
 		
 	}
 	
-	void inputBlwZoneTime(HRCalculator hrc){
-		userInput(BLWZONE_NAME);
-		blwZoneTotal = hrc.calculateUserInput(hours, mins, secs);
+	void inputBlwZoneTime(){
+		HRMenu hrm = new HRMenu(BLWZONE_NAME);
+		
+		while (hrm.isMenuEnabled() == true) {
+			hrm.setVisible(true);
+		} 
+		hrm.setVisible(false);
+		
+		blwZoneTotal = hrm.getTotal();
 		blwZonePercentage = hrc.calculatePercentage(blwZoneTotal, overallTotal);
 	}
 
