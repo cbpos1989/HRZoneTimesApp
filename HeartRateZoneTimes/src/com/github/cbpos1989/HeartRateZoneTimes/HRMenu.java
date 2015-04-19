@@ -1,7 +1,18 @@
+/**
+ * 
+ */
 package com.github.cbpos1989.HeartRateZoneTimes;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+/** 
+ * App to Calculate Heart Rate Zone Percentages based on user input values.
+ * User enters hours, minutes & seconds for overall, InZone, AboveZone & BelowZone Times.
+ * Percentages based on each zone time as it relates to the overall Time
+ *	 
+ * @author Colm O'Sullivan 
+ * 
+ *  
+ *  
+ */ 
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -10,15 +21,16 @@ import javax.swing.JSpinner;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SpinnerNumberModel;
-import javax.swing.event.ChangeListener;
-import javax.swing.event.ChangeEvent;
-import javax.swing.SpinnerModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class HRMenu extends JFrame  {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private int total;
 	private static boolean menuEnabled = false;

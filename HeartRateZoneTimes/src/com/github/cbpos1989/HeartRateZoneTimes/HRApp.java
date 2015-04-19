@@ -9,14 +9,10 @@ package com.github.cbpos1989.HeartRateZoneTimes;
  * Percentages based on each zone time as it relates to the overall Time
  *	 
  * @author Colm O'Sullivan 
- * @version 1.0  
- * @dependencies none
+ * 
  *  
  *  
  */ 
-
-
-import java.util.Scanner;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -28,9 +24,7 @@ class HRApp{
 	private static final String ABVZONE_NAME = "Above-Zone";
 	private static final String BLWZONE_NAME = "Below-Zone";
 	
-	private int hours = 0;
-	private int mins = 0;
-	private int secs = 0;
+	
 	private int overallTotal = 0;
 	private int inZoneTotal = 0;
 	private int abvZoneTotal = 0;
@@ -38,7 +32,6 @@ class HRApp{
 	private double inZonePercentage = 0.0D;
 	private double abvZonePercentage = 0.0D;
 	private double blwZonePercentage = 0.0D;
-	private Scanner scan;
 	private HRCalculator hrc = new HRCalculator();
 
 	public static void main(String[] args){
@@ -59,25 +52,6 @@ class HRApp{
 		inputAbvZoneTime();
 		inputBlwZoneTime();
 		userOutput();
-	}
-
-	//Allow user to input values for hours, mins & secs
-	void userInput(String name){
-		scan = new Scanner(System.in);
-		//boolean validInput = false;
-		
-		System.out.println("\n===Enter " + name + " Time===");
-		
-		
-		System.out.print("Enter Hours: ");
-		hours = scan.nextInt();
-		
-		System.out.print("Enter Minutes: ");
-		mins = scan.nextInt();
-
-		System.out.print("Enter Seconds: ");
-		secs = scan.nextInt();
-		
 	}
 
 	//Output final sum of user input values

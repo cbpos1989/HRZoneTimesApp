@@ -7,8 +7,7 @@ package com.github.cbpos1989.HeartRateZoneTimes;
  * Class that will receive values from HRApp{} and return total time in seconds and calculate the percentage values.
  *	 
  * @author Colm O'Sullivan 
- * @version 1.0  
- * @dependencies none
+ * 
  *  
  *  
  */ 
