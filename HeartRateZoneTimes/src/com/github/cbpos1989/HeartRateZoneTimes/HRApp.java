@@ -18,6 +18,10 @@ package com.github.cbpos1989.HeartRateZoneTimes;
 
 import java.util.Scanner;
 
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.WindowConstants;
+
 class HRApp{
 	private static final String OVERALL_NAME = "Overall";
 	private static final String INZONE_NAME = "In-Zone";
@@ -48,7 +52,7 @@ class HRApp{
 	void intializeMenu(){
 		hrc = new HRCalculator();
 		
-		System.out.println("\u0003---\u0003 Heart Rate Zone Calculator \u0003---\u0003");
+		//System.out.println("\u0003---\u0003 Heart Rate Zone Calculator \u0003---\u0003");
 	
 		inputOverallTime();
 		inputInZoneTime();
@@ -78,17 +82,21 @@ class HRApp{
 
 	//Output final sum of user input values
 	void userOutput(){
-		
+		JFrame frame = new JFrame();
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		if(hrc.checkPercentage(inZonePercentage, abvZonePercentage, blwZonePercentage)){
-			
-			
-			System.out.println("\n***Percentage Totals***\n" 
-						+ INZONE_NAME + ": " + Math.round(inZonePercentage) + "%\n" 
-						+ ABVZONE_NAME + ": " + Math.round(abvZonePercentage) + "%\n"
-						+ BLWZONE_NAME + ": " + Math.round(blwZonePercentage) + "%");
+			JOptionPane.showMessageDialog(frame,
+					INZONE_NAME + ": " + Math.round(inZonePercentage) + "%\n" 
+							+ ABVZONE_NAME + ": " + Math.round(abvZonePercentage) + "%\n"
+							+ BLWZONE_NAME + ": " + Math.round(blwZonePercentage) + "%",
+				    "Percentage Totals",
+				    JOptionPane.PLAIN_MESSAGE);
+			System.exit(0);
 		} else {
-			System.out.println("---Incorrect Percentage---");
+			JOptionPane.showMessageDialog(frame, "Incorrect Percentages", "Percentage Totals", JOptionPane.WARNING_MESSAGE);
+			System.exit(0);
 		}
+		
 	}
 
 	void inputOverallTime(){
