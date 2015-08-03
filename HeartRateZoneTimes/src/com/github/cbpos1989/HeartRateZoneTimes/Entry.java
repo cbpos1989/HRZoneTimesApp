@@ -4,7 +4,6 @@
 package com.github.cbpos1989.HeartRateZoneTimes;
 
 import java.util.Calendar;
-import java.util.spi.CalendarDataProvider;
 
 /**
  * Class to hold the state and behavior for each entry.
@@ -13,7 +12,7 @@ import java.util.spi.CalendarDataProvider;
  *
  */
 public class Entry {
-	private static Calendar date;
+	private Calendar date;
 	private int inZonePercentage;
 	private int aboveZonePercentage;
 	private int belowZonePercentage;
@@ -22,15 +21,74 @@ public class Entry {
 	private int heartRateAverage;
 	
 	public Entry(){
-		this(date.get(Calendar.DAY_OF_MONTH),-1,-1,-1,-1,-1,-1);
+		this(Calendar.getInstance(),-1,-1,-1,-1,-1,-1);
 	}
 	
-	public Entry(int date, int inZonePercentage, int aboveZonePercentage, int belowZonePercentage, int heartRateHigh, int  heartRateLow, int heartRateAverage){
-		
+	public Entry(Calendar date, int inZonePercentage, int aboveZonePercentage, int belowZonePercentage, int heartRateHigh, int  heartRateLow, int heartRateAverage){
+		this.setDate(date);
+		this.setInZonePercentage(inZonePercentage);
+		this.setAboveZonePercentage(aboveZonePercentage);
+		this.setBelowZonePercentage(belowZonePercentage);
+		this.setHeartRateHigh(heartRateHigh);
+		this.setHeartRateLow(heartRateLow);
+		this.setHeartRateAverage(heartRateAverage);
 	}
-	
-	
-	
+
+	public Calendar getDate() {
+		return date;
+	}
+
+	public void setDate(Calendar date) {
+		this.date = date;
+	}
+
+	public int getInZonePercentage() {
+		return inZonePercentage;
+	}
+
+	public void setInZonePercentage(int inZonePercentage) {
+		this.inZonePercentage = inZonePercentage;
+	}
+
+	public int getAboveZonePercentage() {
+		return aboveZonePercentage;
+	}
+
+	public void setAboveZonePercentage(int aboveZonePercentage) {
+		this.aboveZonePercentage = aboveZonePercentage;
+	}
+
+	public int getBelowZonePercentage() {
+		return belowZonePercentage;
+	}
+
+	public void setBelowZonePercentage(int belowZonePercentage) {
+		this.belowZonePercentage = belowZonePercentage;
+	}
+
+	public int getHeartRateHigh() {
+		return heartRateHigh;
+	}
+
+	public void setHeartRateHigh(int heartRateHigh) {
+		this.heartRateHigh = heartRateHigh;
+	}
+
+	public int getHeartRateLow() {
+		return heartRateLow;
+	}
+
+	public void setHeartRateLow(int heartRateLow) {
+		this.heartRateLow = heartRateLow;
+	}
+
+	public int getHeartRateAverage() {
+		return heartRateAverage;
+	}
+
+	public void setHeartRateAverage(int heartRateAverage) {
+		this.heartRateAverage = heartRateAverage;
+	}
 	
 }
 
@@ -42,6 +100,14 @@ enum ZoneType{
 	private String displayName;
 	
 	ZoneType(String displayName){
+		this.setDisplayName(displayName);
+	}
+
+	public String getDisplayName() {
+		return displayName;
+	}
+
+	public void setDisplayName(String displayName) {
 		this.displayName = displayName;
 	}
 }

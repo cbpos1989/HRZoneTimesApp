@@ -29,6 +29,7 @@ public class HRMainMenu extends JFrame {
 	private static final long serialVersionUID = -3120959686516249571L;
 	private JPanel contentPane;
 	private final JScrollPane scrollPane;
+	private JList<Entry> list = new JList<Entry>();
 
 	
 	/**
@@ -63,9 +64,7 @@ public class HRMainMenu extends JFrame {
 		lblHeartRateApp.setHorizontalAlignment(SwingConstants.CENTER);
 		lblHeartRateApp.setBounds(114, 11, 196, 32);
 		contentPane.add(lblHeartRateApp);
-		
-		JList list = new JList();
-		
+	
 		final JTextPane textPane = new JTextPane();
 		textPane.setBackground(Color.LIGHT_GRAY);
 		textPane.setBounds(10, 11, 402, 240);
