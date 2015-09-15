@@ -1,8 +1,6 @@
 package com.github.cbpos1989.HeartRateZoneTimes;
 
 
-import java.awt.EventQueue;
-
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
@@ -25,28 +23,13 @@ public class EntryMenu extends JFrame {
 	private JTextField aboveZoneTextField;
 	private JTextField belowZoneTextField;
 	private final String DEFAULT_ENTRY_TIME = "00:00:00";
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					EntryMenu frame = new EntryMenu();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
 	/**
 	 * Create the frame.
 	 */
 	public EntryMenu() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		
+		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		setBounds(100, 100, 451, 191);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -103,9 +86,8 @@ public class EntryMenu extends JFrame {
 		
 		JButton btnCommit = new JButton("Commit");
 		btnCommit.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
-				
+			public void actionPerformed(ActionEvent evt) {
+			
 			}
 		});
 		btnCommit.setFont(new Font("Tunga", Font.BOLD, 18));

@@ -90,6 +90,9 @@ public class Entry {
 		this.heartRateAverage = heartRateAverage;
 	}
 	
+	public String toString(){
+		return "Date: " + getDate() + "In Zone %: " + getInZonePercentage();
+	}
 }
 
 enum ZoneType{
