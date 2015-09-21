@@ -23,8 +23,8 @@ class HRCalculator{
 
 	
 	double calculatePercentage(int inputValue, int overallValue){
-		return ((double)inputValue/overallValue) * 100.0D;
-	
+		return (double)((inputValue/overallValue) * 100.0D);
+		
 	}
 
 	//Makes sure all three percentage values total up to 100%
